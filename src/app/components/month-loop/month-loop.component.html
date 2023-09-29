@@ -1,0 +1,24 @@
+<div id="calenderMonth">
+  <button id="prevMonth" (click)="changeToPreviousMonth()">prev</button>
+  <span id="monthDisplay">{{ monthDisplay }}</span>
+  <button id="nextMonth" (click)="changeToNextMonth()">next</button>
+</div>
+
+<div id="calendarDaysContainer">
+  <div
+    id="calendarDays"
+    *ngFor="let day of daysInMonth"
+    (click)="clickEvent(day)"
+  >
+    {{ day }}
+  </div>
+
+  <button id="buttonDelete" (click)="clearMonthData()">Delete</button>
+  <button
+    id="buttonMonths"
+    *ngFor="let month of monthNames"
+    (click)="retrieve(month)"
+  >
+    {{ month }}
+  </button>
+</div>
